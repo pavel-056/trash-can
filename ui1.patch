@@ -1,0 +1,26 @@
+Index: git yellow/main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- git yellow/main.py	(revision 9e5bea2687c797a6b0bd8abb49734788b9b43fc6)
++++ git yellow/main.py	(revision 2d588c4f2ed515f4a2f7a3eef3a5ff3cae954f1b)
+@@ -1,1 +1,15 @@
+-import sys
+\ No newline at end of file
++import sys
++from PyQt5 import uic
++
++class MyWidget(QMainWindow):
++    def __init__(self):
++        super().__init__()
++        uic.loadUi('Ui.ui', self)
++
++
++
++if __name__ == '__main__':
++    app = QApplication(sys.argv)
++    ex = MyWidget()
++    ex.show()
++    sys.exit(app.exec_())
+\ No newline at end of file
